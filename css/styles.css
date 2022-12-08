@@ -237,7 +237,6 @@ ul {
   background-color: var(--btn-background-color);
 }
 
-
 /*section features*/
 
 .features {
@@ -491,7 +490,6 @@ ul {
   fill: var(--primary-icon-color);
   margin: auto;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client:hover .client-icon,
@@ -519,7 +517,8 @@ ul {
   border-radius: 4px;
   color: var(--primary-text-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover,
@@ -648,10 +647,10 @@ img {
   padding: 63px 24px;
 }
 
-.portfolio-link:hover .portfolio-overlay {
+.portfolio-link:hover .portfolio-overlay,
+.portfolio-link:focus .portfolio-overlay {
   transform: translateY(0);
   opacity: 1;
-
 }
 
 .portfolio-thumb:hover::before {
@@ -748,6 +747,7 @@ img {
   text-transform: uppercase;
   color: var(--primary-white-color);
 }
+
 .icon-list {
   display: flex;
   align-items: center;
@@ -783,9 +783,9 @@ img {
   background-color: var(--primary-accent-color);
 }
 
-/* Buckdrop */
+/* Backdrop */
 
-.buckdrop {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -798,37 +798,35 @@ img {
 
   opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
-.buckdrop.is-hidden {
+
+.backdrop.is-hidden {
   opacity: 0;
-  visibility: hidden;
+  /* visibility: hidden; */
   pointer-events: none;
+  
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(1.2);
+  transform: translate(-50%, -50%) scale(0.8); 
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  
 
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   background-color: var(--primary-white-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-   0px 1px 1px rgba(0, 0, 0, 0.14),
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
 
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
-  
-
 }
 
 .modal-close {
@@ -847,4 +845,3 @@ img {
 .close {
   margin: auto;
 }
-
