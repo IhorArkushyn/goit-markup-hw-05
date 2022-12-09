@@ -199,7 +199,8 @@ ul {
   text-align: center;
   max-width: 1600px;
   height: 600px;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  background-image: linear-gradient(to right,
+   rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url(../images/hero.jpg);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -476,14 +477,18 @@ ul {
   border: 1px solid var(--primary-icon-color);
   border-radius: 4px;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
+
+  
+
 
 .client:hover,
 .client:focus {
-  cursor: pointer;
-  border: 1px solid var(--primary-accent-color);
-  color: var(--primary-accent-color);
+  border-color: var(--primary-accent-color);
+  /* color: var(--primary-accent-color); */
 }
 
 .client-icon {
@@ -494,7 +499,7 @@ ul {
 
 .client:hover .client-icon,
 .client:focus .client-icon {
-  fill: currentColor;
+  fill: var(--primary-accent-color);
 }
 
 /*портфолио*/
@@ -517,8 +522,10 @@ ul {
   border-radius: 4px;
   color: var(--primary-text-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color
+   250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-btn:hover,
